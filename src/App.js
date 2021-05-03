@@ -20,7 +20,7 @@ const App = ({ isLoading, isError, fetchContacts }) => {
       {isLoading ? (
         <Spinner />
       ) : isError ? (
-        <p>Oops, we have some loading error! :(</p>
+        <p>it's gonna be some error :(</p>
       ) : (
         <ContactList />
       )}
