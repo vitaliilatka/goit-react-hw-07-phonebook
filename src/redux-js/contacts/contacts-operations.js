@@ -29,7 +29,7 @@ const addContact = (name, number) => async dispatch => {
     const contact = { name, number };
     dispatch(fetchContactRequest());
     try {
-        const { data } = await axios.get(`\contacts?name=${name}`);
+        const { data } = await axios.get(`/contacts?name=${name}`);
         if (data[0]?.name === name) {
             alert(`${name} is already in contacts`);
             dispatch(fetchContactSuccess());
@@ -54,8 +54,13 @@ const deleteContact = contactId => dispatch => {
 };
 
 // eslint-disable-next-line
-export default {
-    addContact,
-    deleteContact,
-    fetchContacts
-};
+export default { addContact, deleteContact, fetchContacts };
+
+// const addContact = (name, number) => dispatch => {
+//   const contact = { name, number };
+//   dispatch(addContactRequest());
+//   axios
+//     .post('/contacts', contact)
+//     .then(({ data }) => dispatch(addContactSuccess(data)))
+//     .catch(err => dispatch(addContactError(err)));
+// };

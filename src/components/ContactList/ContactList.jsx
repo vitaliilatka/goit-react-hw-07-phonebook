@@ -1,10 +1,9 @@
 import PropTypes from 'prop-types';
-import ContactListItem from '../ContactListItem/ContactListItem';
-import styles from './ContactList.module.css';
+import ContactListItem from '../ContactListItem';
 
 const ContactList = ({ contacts, onDeleteContact }) => {
     return (
-        <ul className={styles.ContactList}>
+        <ul>
             {contacts.map(({ id, name, number }) => (
                 <ContactListItem
                     key={id}

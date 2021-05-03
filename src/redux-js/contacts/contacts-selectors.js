@@ -8,9 +8,9 @@ const getAllContacts = state => state.contacts.items;
 const getFilteredContacts = createSelector(
     [getAllContacts, getFilter],
     (contacts, filter) => {
-        const normalizeFilter = filter.toLowerCase();
+        const normalizedFilter = filter.toLowerCase();
         return contacts.filter(({ name }) =>
-            name.toLowerCase().includes(normalizeFilter),
+            name.toLowerCase().includes(normalizedFilter),
         );
     },
 );
@@ -20,5 +20,5 @@ export default {
     getLoading,
     getError,
     getFilter,
-    getFilteredContacts
+    getFilteredContacts,
 };
